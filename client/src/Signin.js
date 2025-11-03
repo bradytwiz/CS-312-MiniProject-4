@@ -2,6 +2,7 @@ import { useState } from "react";
 
 function Signin({ onSigninSuccess }) {
     const [formData, setFormData] = useState({ user_id: "", password: "" });
+    const [error, setError] = useState("");
 
     const handleChange = (event) => {
         setFormData({ ...formData, [event.target.name]: event.target.value });

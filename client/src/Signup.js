@@ -2,6 +2,7 @@ import { useState } from "react";
 
 function Signup({ onSignupSuccess }) {
     const [formData, setFormData] = useState({ user_id: "", password: "", name: "" });
+    const [error, setError] = useState("");
 
     const handleChange = (event) => {
         setFormData({ ...formData, [event.target.name]: event.target.value });
@@ -16,7 +17,6 @@ function Signup({ onSignupSuccess }) {
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify(formData),
             });
-            
             await response.json();
 
             if (!response.ok) {

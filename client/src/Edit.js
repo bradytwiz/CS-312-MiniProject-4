@@ -1,9 +1,9 @@
 import { useState, useEffect } from "react";
 
-function Edit({  postId, onDone }) {
+function Edit({ postId, onDone }) {
     const [title, setTitle] = useState("");
     const [body, setBody] = useState("");
-
+    const [error, setError] = useState("");
 
     useEffect(() => {
         const fetchPost = async () => {
